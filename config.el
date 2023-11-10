@@ -75,5 +75,13 @@
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
 
+;;
+;; NOTE Nerd fonts can be installed from https://github.com/ryanoasis/nerd-fonts
+;;
+
 (map! "C->" #'mc/mark-next-like-this)
 (map! "C-<" #'mc/mark-previous-like-this)
+
+(if (display-graphic-p)
+    (setq doom-theme 'doom-one)
+  (setq doom-theme 'doom-dark+))
