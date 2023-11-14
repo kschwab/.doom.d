@@ -75,9 +75,13 @@
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
 
-;;
-;; NOTE Nerd fonts can be installed from https://github.com/ryanoasis/nerd-fonts
-;;
+
+;; NOTE Nerd fonts can be installed from:
+;;   1. https://github.com/ryanoasis/nerd-fonts/releases
+
+;; NOTE Vterm requires shell side configuration:
+;;   1. https://github.com/akermu/emacs-libvterm#shell-side-configuration
+;;   2. https://github.com/akermu/emacs-libvterm#directory-tracking-and-prompt-tracking
 
 (map! "C->" #'mc/mark-next-like-this)
 (map! "C-<" #'mc/mark-previous-like-this)
