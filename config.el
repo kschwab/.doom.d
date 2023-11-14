@@ -85,3 +85,9 @@
 (if (display-graphic-p)
     (setq doom-theme 'doom-one)
   (setq doom-theme 'doom-dark+))
+
+(after! magit
+  (setq magit-visit-ref-behavior '(checkout-any focus-on-ref))
+  (remove-hook 'magit-refs-sections-hook 'magit-insert-tags)
+  (remove-hook 'magit-refs-sections-hook 'magit-insert-remote-branches)
+  (add-hook 'magit-refs-sections-hook 'magit-insert-local-branches))
