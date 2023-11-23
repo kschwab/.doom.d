@@ -23,6 +23,12 @@
 (package! undo-fu-session
   :recipe (:host github :repo "emacsmirror/undo-fu-session"))
 
+;; Workaround for Python 3.11, 3.12 support until officially added:
+;; https://github.com/pythonic-emacs/anaconda-mode/pull/437
+(unpin! anaconda-mode)
+(package! anaconda-mode
+  :recipe (:host github :repo "kschwab/anaconda-mode"))
+
 ;; If the package you are trying to install does not contain a PACKAGENAME.el
 ;; file, or is located in a subdirectory of the repo, you'll need to specify
 ;; `:files' in the `:recipe':
