@@ -32,7 +32,9 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-one)
+(if (display-graphic-p)
+    (setq doom-theme 'doom-one)
+  (setq doom-theme 'doom-dark+))
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
@@ -86,12 +88,14 @@
 (map! "C->" #'mc/mark-next-like-this)
 (map! "C-<" #'mc/mark-previous-like-this)
 
-(if (display-graphic-p)
-    (setq doom-theme 'doom-one)
-  (setq doom-theme 'doom-dark+))
-
 (after! magit
   (setq magit-visit-ref-behavior '(checkout-any focus-on-ref))
   (remove-hook 'magit-refs-sections-hook 'magit-insert-tags)
   (remove-hook 'magit-refs-sections-hook 'magit-insert-remote-branches)
   (add-hook 'magit-refs-sections-hook 'magit-insert-local-branches))
+
+;; NOTE More keybinding information can be found here:
+;; https://discourse.doomemacs.org/t/how-to-re-bind-keys/56
+
+(after! vterm
+  (map! :map vterm-mode-map "C-c C-j" #'vterm-copy-mode))
