@@ -99,3 +99,6 @@
 
 (after! vterm
   (map! :map vterm-mode-map "C-c C-j" #'vterm-copy-mode))
+
+(after! projectile
+  (setq projectile-switch-project-action #'projectile-vc))
