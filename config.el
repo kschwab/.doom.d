@@ -80,6 +80,7 @@
 
 ;; NOTE Nerd fonts can be installed from:
 ;;   1. https://github.com/ryanoasis/nerd-fonts/releases
+;;   2. M-x nerd-icons-install-fonts
 
 ;; NOTE Vterm requires shell side configuration:
 ;;   1. https://github.com/akermu/emacs-libvterm#shell-side-configuration
