@@ -103,3 +103,9 @@
 
 (after! projectile
   (setq projectile-switch-project-action #'projectile-vc))
+
+(ffap-bindings)
+;; Disable network lookups to speed up ffap
+(setq ffap-machine-p-local 'reject)
+(setq ffap-machine-p-known 'reject)
+(setq ffap-machine-p-unknown 'reject)
